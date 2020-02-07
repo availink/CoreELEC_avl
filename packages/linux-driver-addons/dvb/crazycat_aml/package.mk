@@ -34,15 +34,17 @@ pre_make_target() {
 
 make_target() {
   cp -RP $(get_build_dir media_tree_cc_aml)/* $PKG_BUILD/linux
-  rm  -rf $PKG_BUILD/linux/drivers/media/platform/meson/wetek
-  rm  -rf $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
-  cp -Lr $(get_build_dir media_tree_aml)/* $PKG_BUILD/linux
+  rm -rf $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
+  mkdir $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
+  echo $(get_build_dir media_tree_cc_aml)
+  echo $PKG_BUILD
+  #exit 0
+  cp -R $(get_build_dir media_tree_cc_aml)/drivers/media/platform/meson/dvb-avl/* $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
 
   # compile modules
   echo "obj-y += video_dev/" >> "$PKG_BUILD/linux/drivers/media/platform/meson/Makefile"
-  echo "obj-y += dvb/" >> "$PKG_BUILD/linux/drivers/media/platform/meson/Makefile"
-  echo 'source "drivers/media/platform/meson/dvb/Kconfig"' >>  "$PKG_BUILD/linux/drivers/media/platform/Kconfig"
-  sed -e 's/ && RC_CORE//g' -i $PKG_BUILD/linux/drivers/media/usb/dvb-usb/Kconfig
+  echo "obj-y += wetek/" >> "$PKG_BUILD/linux/drivers/media/platform/meson/Makefile"
+  echo "obj-y += dvb-avl/" >> "$PKG_BUILD/linux/drivers/media/platform/meson/Makefile"
 
   # make config all
   kernel_make VER=$KERNEL_VER SRCDIR=$(kernel_path) allyesconfig

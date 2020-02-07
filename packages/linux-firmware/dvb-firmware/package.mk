@@ -12,9 +12,11 @@ PKG_URL="https://github.com/CoreELEC/dvb-firmware/archive/$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_LONGDESC="dvb-firmware: firmwares for various DVB drivers"
 PKG_TOOLCHAIN="manual"
+AVL_PATCH_DIR="${HOME}/tom/amlogic_meson_dvb4linux/"
 
 makeinstall_target() {
   PKG_FW_DIR="$INSTALL/$(get_kernel_overlay_dir)/lib/firmware"
   mkdir -p "$PKG_FW_DIR"
-    cp -a "$PKG_BUILD/firmware/"* "$PKG_FW_DIR"
+  cp -a "$PKG_BUILD/firmware/"* "$PKG_FW_DIR"
+  cp -a ${AVL_PATCH_DIR}/firmware/availink "$PKG_FW_DIR"
 }
