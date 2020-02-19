@@ -39,7 +39,7 @@ make_target() {
   echo $(get_build_dir media_tree_cc_aml)
   echo $PKG_BUILD
   #exit 0
-  cp -R $(get_build_dir media_tree_cc_aml)/drivers/media/platform/meson/dvb-avl/* $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
+  cp -LR $(get_build_dir media_tree_cc_aml)/drivers/media/platform/meson/dvb-avl/* $PKG_BUILD/linux/drivers/media/platform/meson/dvb-avl
 
   # compile modules
   echo "obj-y += video_dev/" >> "$PKG_BUILD/linux/drivers/media/platform/meson/Makefile"
