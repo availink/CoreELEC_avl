@@ -26,6 +26,9 @@ post_unpack() {
   rm -rf $PKG_BUILD/drivers/staging/media/atomisp
   sed -i 's|^.*drivers/staging/media/atomisp.*$||' \
     $PKG_BUILD/drivers/staging/media/Kconfig
+
+  rm -rf $PKG_BUILD/drivers/media/platform/meson/dvb-avl
+  ln -svf ${ROOT}/../amlogic_meson_dvb4linux/dvb-avl/ $PKG_BUILD/drivers/media/platform/meson/dvb-avl
 }
 
 configure() {
