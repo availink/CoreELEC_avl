@@ -6,11 +6,11 @@
 # with 1.0.0 repeat delay is broken. test on upgrade
 
 PKG_NAME="v4l-utils"
-PKG_VERSION="1.14.2"
-PKG_SHA256="e6b962c4b1253cf852c31da13fd6b5bb7cbe5aa9e182881aec55123bae680692"
+PKG_VERSION="1.14.2-avl-scan"
+PKG_SHA256="06f04d5397969189e205574f13c80a6a609d37a1ff04eaabe67effab02637522"
 PKG_LICENSE="GPL"
-PKG_SITE="http://linuxtv.org/"
-PKG_URL="http://linuxtv.org/downloads/v4l-utils/$PKG_NAME-$PKG_VERSION.tar.bz2"
+PKG_SITE="https://ftpus.availink.com/coreelec_packages/"
+PKG_URL="https://ftpus.availink.com/coreelec_packages/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.bz2"
 PKG_DEPENDS_TARGET="toolchain alsa-lib systemd"
 PKG_LONGDESC="Linux V4L2 and DVB API utilities and v4l libraries (libv4l)."
 PKG_STAMP_VAR="$IR_REMOTE_KEYMAPS"
