@@ -25,7 +25,7 @@
 		dtv_demod0 = "Avl6211";
 		dtv_demod0_i2c_adap_id = <2>;
 		dtv_demod0_i2c_addr = <0x14>;
-		dtv_demod0_tuner_i2c_addr = <0x60>;
+		dtv_demod0_tuner_i2c_addr = <0x7a>;
 		dtv_demod0_reset_value = <0>;
 		dtv_demod0_reset_gpio-gpios = <&gpio GPIODV_13 GPIO_ACTIVE_LOW>;
 		dtv_demod0_power_gpio-gpios = <&gpio GPIODV_14 GPIO_ACTIVE_LOW>;
