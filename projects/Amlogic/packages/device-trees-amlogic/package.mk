@@ -30,7 +30,8 @@ make_target() {
   done
 
   # Copy all device trees to kernel source folder and create a list
-  cp ${ROOT}/SDMC/gxl_SDMC.dts $PKG_BUILD/
+  cp -f ${ROOT}/SDMC/*.dts $PKG_BUILD/
+  cp -f ${ROOT}/vim2/*.dts $PKG_BUILD/
   cp -f $PKG_BUILD/*.dts* arch/$TARGET_KERNEL_ARCH/boot/dts/amlogic/
   for f in $PKG_BUILD/*.dts; do
     DTB_NAME="$(basename $f .dts).dtb"
