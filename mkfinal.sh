@@ -5,6 +5,8 @@ if [ "$BOARD" == "SDMC" ]; then
   sudo cp SDMC/rc_maps.cfg /media/$USER/STORAGE/.config/
 elif [ "$BOARD" == "vim2" ]; then
   sudo cp vim2/rc_maps.cfg /media/$USER/STORAGE/.config/
+elif [ "$BOARD" == "meCoolK2pro" ]; then
+  sudo cp meCool/remote.conf /media/$USER/COREELEC/
 else
   echo "UNKNOWN board '$BOARD'"
   exit 1
