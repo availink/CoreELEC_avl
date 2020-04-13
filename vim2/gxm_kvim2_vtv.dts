@@ -76,6 +76,8 @@
 		dtv_demod0_reset_gpio-gpios = <&gpio  GPIODV_12  GPIO_ACTIVE_HIGH>;
 		dtv_demod0_power_gpio-gpios = <&gpio  GPIODV_20  GPIO_ACTIVE_HIGH>;
 		dtv_demod0_lock_gpio-gpios = <&gpio  GPIODV_11  GPIO_ACTIVE_HIGH>;
+		dtv_demod0_tc_agc_sel = "tc_only"; //none, tc_only, s_only, both
+		dtv_demod0_s_agc_sel = "s_only";
 		fe0_dtv_demod = <0>;
 		fe0_ts = <1>;
 		fe0_dev = <0>;
