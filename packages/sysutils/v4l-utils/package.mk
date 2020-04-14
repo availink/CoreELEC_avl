@@ -7,10 +7,10 @@
 
 PKG_NAME="v4l-utils"
 PKG_VERSION="1.14.2-avl-scan"
-PKG_SHA256="06f04d5397969189e205574f13c80a6a609d37a1ff04eaabe67effab02637522"
+PKG_SHA256="60b49ee88661285c3af82e72fc29a6bfbd89b6248dd86097f2daaf79c55f1694"
 PKG_LICENSE="GPL"
 PKG_SITE="https://ftpus.availink.com/coreelec_packages/"
-PKG_URL="https://ftpus.availink.com/coreelec_packages/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.bz2"
+PKG_URL="https://ftpus.availink.com/coreelec_packages/$PKG_NAME/$PKG_SHA256.tar.bz2"
 PKG_DEPENDS_TARGET="toolchain alsa-lib systemd"
 PKG_LONGDESC="Linux V4L2 and DVB API utilities and v4l libraries (libv4l)."
 PKG_STAMP_VAR="$IR_REMOTE_KEYMAPS"
