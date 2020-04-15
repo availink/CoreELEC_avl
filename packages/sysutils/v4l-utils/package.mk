@@ -7,7 +7,7 @@
 
 PKG_NAME="v4l-utils"
 PKG_VERSION="1.14.2-avl-scan"
-PKG_SHA256="3fcf6e47c9c101ae122ff80d99f35bb5ae6f7b9b04412bb8a12079aabd9a6084" 
+PKG_SHA256="ba7f0552cc563aa44ce46f0c30f575f97de886dfb58b31926132643d61c43617"
 PKG_LICENSE="GPL"
 PKG_SITE="https://ftpus.availink.com/coreelec_packages/"
 PKG_URL="https://ftpus.availink.com/coreelec_packages/$PKG_NAME/$PKG_SHA256.tar.bz2"
