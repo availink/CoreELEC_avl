@@ -12,7 +12,7 @@ PKG_URL="https://github.com/CoreELEC/dvb-firmware/archive/$PKG_VERSION.tar.gz"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_LONGDESC="dvb-firmware: firmwares for various DVB drivers"
 PKG_TOOLCHAIN="manual"
-AVL_FW_DIR="${ROOT}/../amlogic_meson_dvb4linux/linux-firmware-availink/availink"
+AVL_FW_DIR="${ROOT}/../amlogic_meson_dvb4linux/dvb-avl/dvb-frontends-availink/firmware/availink"
 
 makeinstall_target() {
   PKG_FW_DIR="$INSTALL/$(get_kernel_overlay_dir)/lib/firmware"

@@ -14,6 +14,9 @@ case "$LINUX" in
     PKG_VERSION="f9a4b158183866c589ee8c06ab740f41aa08fa66"
     PKG_SHA256="ff629f20b39749e6523571409c74c38a27ba0101b0ffe2a1ecea3e4dafea6dd2"
     PKG_URL="https://github.com/CoreELEC/media_tree_aml/archive/${PKG_VERSION}.tar.gz"
+    #PKG_VERSION="835ba95d44e70c8b1a49cc4062c47a161d91de72"
+    #PKG_SHA256="95a94decd12d54b28f0df0332c73963024a6df9b5b3f5ddd58c3f3768cbd0f37"
+    #PKG_URL="https://ftpus.availink.com/coreelec_packages/media_tree_aml/media_tree_aml-${PKG_VERSION}.tar.gz"
     ;;
   amlogic-4.9)
     PKG_VERSION="0f6cd09b6ad228b8a5517e7879ade76a72eec5c2"
@@ -25,4 +28,5 @@ esac
 unpack() {
   mkdir -p $PKG_BUILD/
   tar -xf $SOURCES/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.gz -C $PKG_BUILD/../
+  #tar -xf $SOURCES/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.gz -C $PKG_BUILD/
 }
