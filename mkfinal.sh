@@ -20,7 +20,7 @@ sudo chmod 600 /media/$USER/STORAGE/.ssh/authorized_keys
 sudo cp target/addons/9.2/Amlogic/arm/service.tvheadend42/service.tvheadend42-9.2.*.zip /media/$USER/STORAGE/
 sudo ssh-keygen -f /media/$USER/STORAGE/.ssh/id_rsa -N ""
 sudo cat /media/$USER/STORAGE/.ssh/id_rsa.pub
-if [ "$DO_TELE" != "" ]; then
+if [ "$DO_TELE" == "telemetry" ]; then
   pushd ../net_srv
   if [ "$?" == "0" ]; then
     make arm64
