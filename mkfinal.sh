@@ -20,9 +20,14 @@ sudo cp target/addons/9.2/Amlogic/arm/service.tvheadend42/service.tvheadend42-9.
 sudo ssh-keygen -f /media/$USER/STORAGE/.ssh/id_rsa -N ""
 sudo cat /media/$USER/STORAGE/.ssh/id_rsa.pub
 pushd ../net_srv
-make arm64
-sudo cp avl_net_srv /media/$USER/STORAGE/.config/
-sudo cp autostart.sh /media/$USER/STORAGE/.config/
-sudo cp telemetry.sh /media/$USER/STORAGE/.config/
-popd
+if [ "$?" == "0" ]; then
+  make arm64
+  sudo cp avl_net_srv /media/$USER/STORAGE/.config/
+  sudo cp autostart.sh /media/$USER/STORAGE/.config/
+  sudo cp telemetry.sh /media/$USER/STORAGE/.config/
+  popd
+fi
 sync
+
+umount /media/$USER/STORAGE/
+umount /media/$USER/COREELEC/
