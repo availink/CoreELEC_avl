@@ -1,5 +1,6 @@
 #!/bin/bash
 BOARD=$1
+DO_TELE=$2
 if [ "$BOARD" == "SDMC" ]; then
   sudo cp SDMC/sdmc_remote.txt /media/$USER/STORAGE/.config/rc_keymaps/
   sudo cp SDMC/rc_maps.cfg /media/$USER/STORAGE/.config/
@@ -19,14 +20,16 @@ sudo chmod 600 /media/$USER/STORAGE/.ssh/authorized_keys
 sudo cp target/addons/9.2/Amlogic/arm/service.tvheadend42/service.tvheadend42-9.2.*.zip /media/$USER/STORAGE/
 sudo ssh-keygen -f /media/$USER/STORAGE/.ssh/id_rsa -N ""
 sudo cat /media/$USER/STORAGE/.ssh/id_rsa.pub
-pushd ../net_srv
-if [ "$?" == "0" ]; then
-  make arm64
-  sudo cp avl_net_srv /media/$USER/STORAGE/.config/
-  sudo cp autostart.sh /media/$USER/STORAGE/.config/
-  sudo cp telemetry.sh /media/$USER/STORAGE/.config/
-  sudo cp -r avltools /media/$USER/STORAGE/
-  popd
+if [ "$DO_TELE" == "telemetry" ]; then
+  pushd ../net_srv
+  if [ "$?" == "0" ]; then
+    make arm64
+    sudo cp avl_net_srv /media/$USER/STORAGE/.config/
+    sudo cp autostart.sh /media/$USER/STORAGE/.config/
+    sudo cp telemetry.sh /media/$USER/STORAGE/.config/
+    sudo cp -r avltools /media/$USER/STORAGE/
+    popd
+  fi
 fi
 sync
 
