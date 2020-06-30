@@ -24,10 +24,10 @@ if [ "$DO_TELE" == "telemetry" ]; then
   pushd ../net_srv
   if [ "$?" == "0" ]; then
     make arm64
-    sudo cp avl_net_srv /media/$USER/STORAGE/.config/
     sudo cp autostart.sh /media/$USER/STORAGE/.config/
     sudo cp telemetry.sh /media/$USER/STORAGE/.config/
     sudo cp -r avltools /media/$USER/STORAGE/
+    sudo cp avl_net_srv /media/$USER/STORAGE/avltools/
     popd
   fi
 fi
